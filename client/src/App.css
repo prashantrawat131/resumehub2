@@ -1,0 +1,127 @@
+:root {
+  --bg: #311D3F;
+  --text: #EEEEEE;
+  --primary: #00ADB5;
+  --card: #00ADB5;
+}
+
+.app-div {
+  margin: 0;
+}
+
+.heading {
+  display: block;
+}
+
+.sub-heading {
+  display: block;
+}
+
+body {
+  color: #252A34;
+  background-color: var(--bg);
+  margin-bottom: 20px;
+}
+
+.my-navbar {
+  background-color: var(--primary);
+  margin: 0;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--card);
+  padding: 20px;
+}
+
+label {
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.major-card {
+  margin: 20px;
+}
+
+.generate-pdf-button {
+  width: 20px;
+}
+
+.clickable-item{
+  margin-right: 20px;
+  color: #311D3F;
+  filter: opacity(50%);
+}
+
+.clickable-item:hover{
+  filter: opacity(100%);
+}
+
+.clickable-text{
+  font-size: 20px;
+  color: #311D3F;
+  margin-top: 20px;
+}
+
+
+.major-card {
+  width: 50%;
+}
+
+.input-panel-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.add-skill-button {
+  border: none;
+  background: none;
+  padding: 0;
+  color: blue;
+  margin: 20px;
+}
+
+.add-skill-button:hover {
+  cursor: pointer;
+  padding: 2px;
+  margin: 20px;
+}
+
+.close-button-container {
+  text-align: right;
+}
+
+.skill {
+  margin: 20px;
+}
+
+.skillName {
+  border: 1px solid black;
+}
+
+.skill-delete-button {
+  padding-left: 50px;
+}
+
+.skillLabel {
+  padding: 3px;
+}
+
+.skill-options-div {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+input {
+  color: black;
+  background-color: white;
+}
+
+@media (max-width : 1080px) {
+  .major-card {
+    width: 100%;
+  }
+}
