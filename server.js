@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const pdf = require("html-pdf");
-const path=require("path");
+const path = require("path");
+const fs=require("fs");
 // const cors = require("cors");
 
 const app = express();
@@ -20,19 +21,28 @@ app.use(bodyParser.json());
 
 app.post("/generate-pdf", (req, res) => {
 
-	const html="<h1>Hello</h1>";
+	console.log("Generating PDF");
 
-	pdf.create(html, options).toFile("resume.pdf", (err) => {
+	const html = "<h1>Ji</h1>";
+
+	const finalPdfPath=path.join(__dirname,"resume.pdf");
+
+	pdf.create(html, options).toFile(finalPdfPath, (err, fileInfo) => {
 		if (err) {
 			console.log(err);
 			// res.send(Promise.reject());
-		} else res.send(Promise.resolve());
+		} else {
+			console.log("PDF generated");
+			console.log("File Info:" + fileInfo);
+			res.sendFile(finalPdfPath);
+		}
 	});
 });
 
 app.get("/download-pdf", (req, res) => {
-	const filePath=path.join(__dirname,"resume.pdf");
-	res.download(filePath);
+	const filePath = path.join(__dirname, "resume.pdf");
+	console.log("Final file path:" + filePath);
+	res.sendFile(filePath);
 });
 
-app.listen(5000, () => console.log("Sever started at port 5000"));
+app.listen(5000, () => console.log("Server started at port 5000"));
