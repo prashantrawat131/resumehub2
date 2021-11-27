@@ -67,7 +67,7 @@ app.get("/download-pdf", (req, res) => {
 });
 
 function getPdfCode(details) {
-	const html = `
+	let html = `
 			<html>
 				<head>
 				<title>Resume Template 1</title>
@@ -90,8 +90,7 @@ function getPdfCode(details) {
 
 				<body>
 					<noscript>You need to enable JavaScript to run this app.</noscript>
-					<div id="root"></div>
-					<div class="container" style="width: 800px;" id="res-temp1">
+					<div class="container" id="res-temp1">
 						<div class="row">
 							<div class="col-md-4 mt-2">
 								<div class="p-3 mb-2 bg-white text-dark py-5">
@@ -126,9 +125,15 @@ function getPdfCode(details) {
 										</div>
 										<div class="card-body">
 											<div class="col-md-4-mt-2">
-												<ul>
-													<li><p>${details.skills[0].skillName}</p></li>
-												</ul>
+												<ul>`;
+
+	//here i have used a for loop for skill array
+	//it is using concatination for adding the strings.
+	details.skills.forEach(skill => {
+		html += `<li>${skill.skillName}  ${skill.skillRating}</li>`;
+	});
+
+	html += `</ul>
 											</div>
 										</div>
 									</div>
