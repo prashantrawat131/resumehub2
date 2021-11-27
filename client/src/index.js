@@ -122,33 +122,24 @@ function generatePDF() {
   //using ajax 
   //data:details
   //code here
+  console.log("Button clicked");
 
-  axios.post("http://localhost:5000/generate-pdf", {hello:"hi"})
+  axios.post("http://localhost:4000/generate-pdf", details)
     .then((result) => {
-      const blobData = new Blob([result.data], { type: "application/pdf" });
-      saveAs(blobData, "resume.pdf");
+     
     })
     .catch((err) => {
       console.log(err);
     });
 
-  // $.ajax({
-  //   url: "http://localhost:5000/generate-pdf",
-  //   type: "POST",
-  //   data: {
-  //     'city': 'pune',
-  //     'country': 'India'
-  //   },
-  //   success:function(data){
-  //     console.log("Success");
-  //     const blob = new Blob(data, {type : 'application/json'});      
-  //     saveAs(blob,"resume.pdf");      
-  //   }
-  // });
-
-  //code here
-  //open a new window to download pdf from localhost:3000/download-pdf
-  // window.open("localhost:5000/download-pdf");
+    setTimeout(function(){
+      console.log("Second part of code");
+      axios.get('http://localhost:4000/download-pdf', { responseType: 'arraybuffer' })
+        .then(res2 => {
+          const blobData = new Blob([res2.data], { type: "application/pdf" });
+          saveAs(blobData, "resume.pdf");
+        });
+    },6000);
 }
 
 
