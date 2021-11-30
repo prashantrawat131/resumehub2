@@ -1,5 +1,3 @@
-// import {FontAwesomeIcon} from "@fortawesome/fontawesome-svg-core";
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 function Navbar(props) {
     return (
         <div>
@@ -7,9 +5,6 @@ function Navbar(props) {
                 <div className="container-fluid">
                     <h1 className="text-center my-2 navbar-brand heading">Resume Hub</h1>
                     <div>
-                        {/* <button className="generate-pdf-button" onClick={generatePDF}>Generate PDF</button> */}
-
-                        {/* <FontAwesomeIcon icon={faCoffee} /> */}
                         <div onClick={props.generatePDF} className="clickable-item">
                             <img
                                 id="download-pdf-button-id"

@@ -22,11 +22,6 @@ app.use(bodyParser.json());
 app.post("/generate-pdf", (req, res) => {
 
 	console.log("Generating PDF");
-	// console.log("Data :"+req.data);
-	// console.log("Data2 :"+req.data.details);
-	// console.log("Data3 :"+res.data);
-	// console.log("Data4 :"+res.data.details);
-	// console.log("Data5 :"+res.body);
 	console.log("Data6 :" + req.body);
 	const details = {
 		about: about,

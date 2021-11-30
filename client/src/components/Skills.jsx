@@ -30,7 +30,7 @@ function Skills(props) {
     }
 
     return (
-        <div className="major-card">
+        <div className="major-card" hidden={props.hidden}>
             <div className="card">
                 <div className="card-body">
                     <CardHeading heading="Skills" />

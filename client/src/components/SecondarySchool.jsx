@@ -2,7 +2,7 @@ import CardHeading from "./CardHeading";
 import LabelInput from "./LabelInput";
 function SecondarySchool(props) {
     return (
-        <div className="major-card">
+        <div className="major-card" hidden={props.hidden}>
             <div className="card">
                 <div className="card-body">
                     <CardHeading heading="Secondary School Details" />

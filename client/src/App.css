@@ -54,7 +54,7 @@ label {
   filter: opacity(50%);
 }
 
-.clickable-item:hover{
+.clickable-item:hover,.motionButton:hover{
   filter: opacity(100%);
 }
 
@@ -66,7 +66,12 @@ label {
 
 
 .major-card {
+  margin-top: 40px;
   width: 50%;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .input-panel-div {
@@ -81,7 +86,7 @@ label {
   background: none;
   padding: 0;
   color: blue;
-  margin: 20px;
+  margin: 10px;
 }
 
 .add-skill-button:hover {
@@ -95,7 +100,7 @@ label {
 }
 
 .skill {
-  margin: 20px;
+  margin: 10px;
 }
 
 .skillName {
@@ -112,7 +117,7 @@ label {
 
 .skill-options-div {
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 input {
@@ -124,4 +129,21 @@ input {
   .major-card {
     width: 100%;
   }
+}
+
+.motionButton{
+  width: 5%;
+  filter: opacity(50%);
+  position: absolute;
+}
+
+#previousButton{
+  top: 50%;
+  left: 10%;
+  transform: rotate(-180deg);
+}
+
+#nextButton{
+  top: 50%;
+  right: 10%;
 }
